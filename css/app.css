@@ -78,3 +78,7 @@ body {
   background-color: rgb(117, 102, 107);
   box-shadow: 0 2px 25px rgba(117, 102, 107, 0.2);
 }
+
+.text-line {
+  line-height: 1.5;
+}
