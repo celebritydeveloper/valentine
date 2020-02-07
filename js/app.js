@@ -1,24 +1,24 @@
-const input = document.getElementById('lbsInput');
-const output = document.getElementById('output');
+// const input = document.getElementById('lbsInput');
+// const output = document.getElementById('output');
 
-output.style.visibility = 'hidden';
+// output.style.visibility = 'hidden';
 
-input.addEventListener('input', (e) => {
-  let lbs = e.target.value;
+// input.addEventListener('input', (e) => {
+//   let lbs = e.target.value;
 
-  output.style.visibility = 'visible';
+//   output.style.visibility = 'visible';
 
-  let grams = document.getElementById('gOutput');
-  grams.innerHTML = lbs/0.0022046;
+//   let grams = document.getElementById('gOutput');
+//   grams.innerHTML = lbs/0.0022046;
 
-  let kiloGrams = document.getElementById('kgOutput');
-  kiloGrams.innerHTML = lbs/2.2046;
+//   let kiloGrams = document.getElementById('kgOutput');
+//   kiloGrams.innerHTML = lbs/2.2046;
 
-  let ounces = document.getElementById('ozOutput');
-  ounces.innerHTML = lbs*16;
+//   let ounces = document.getElementById('ozOutput');
+//   ounces.innerHTML = lbs*16;
 
-  e.preventDefault();
-});
+//   e.preventDefault();
+// });
 
 
 if ('serviceWorker' in navigator) {
@@ -47,8 +47,7 @@ for (var i = 0; i < classname.length; i++) {
   classname[i].addEventListener('click', animateButton, false);
 }
 
-let yes = document.getElementById('yes');
 
-yes.addEventListener('click', () => {
-  yes.setAttribute('id', 'startConfetti');
-})
+//let firebase = 'https://www.gstatic.com/firebasejs/live/3.0/firebase.js';
+
+

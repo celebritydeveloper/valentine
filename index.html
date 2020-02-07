@@ -147,7 +147,7 @@
     <p class="mt-5">Please will you be my Valentine?</p>
     <div>
       <button class="no-button mr-4">No</button>
-      <button class="animated shake infinite confetti-button" id="yes">YES</button>
+      <button class="animated shake infinite confetti-button" id="yes" value="She Accepted">YES</button>
     </div>
     
   </div>
@@ -212,6 +212,42 @@
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+  <script>
+    let yes = document.getElementById('yes');
+    let accept = yes.value
+
+   
+
+        let firebaseConfig = {
+      apiKey: 'AIzaSyD4rc1jzni9N3_Dne_-ZhF5YTiaP3YsQE8',
+      authDomain: 'valentine-9bad6.appspot.com',
+      databaseURL: 'https://valentine-9bad6.firebaseio.com',
+      storageBucket: 'valentine-9bad6.appspot.com'
+    };
+
+  firebase.initializeApp(firebaseConfig);
+   // Get a reference to the database service
+   let database = firebase.database();
+
+   function writeUserData(accept) {
+  firebase.database().ref('valentine-9bad6').set({
+    status: accept
+  });
+}
+
+  yes.addEventListener('click', writeUserData);
+
+
+  </script>
     <script src="js/jquery.confetti.js"></script>
   
 </body>
