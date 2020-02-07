@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Simple weight converter">
+  <title>Weight Converter</title>
+
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/confetti.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+  <!-- Open Graph-->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bolaji-wc.netlify.com/">
+  <meta property="og:title" content="Weight Converter">
+  <meta property="og:image" content="img/favicon.png">
+  <meta property="og:description" content="Simple weight converter">
+  <meta property="og:site_name" content="Weight Converter">
+  <!-- Next tags are optional but recommended -->
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter cards-->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@iambolajiayo">
+  <meta name="twitter:creator" content="iambolajiayo">
+  <meta name="twitter:url" content="https://bolaji-wc.netlify.com/">
+  <meta name="twitter:title" content="Weight Converter">
+  <meta name="twitter:description" content="Simple weight converter">
+  <meta name="twitter:image" content="img/favicon.png">
+
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#333" />
+</head>
+
+<style class="cp-pen-styles">
+  body {
+    font-size: 16px;
+    font-family: 'Countryside', 'Roboto', 'Arial', sans-serif;
+    background-color: #f8faff;
+  }
+
+
+  .confetti-button {
+    font-family: 'Helvatica', 'Arial', sans-serif;
+    display: inline-block;
+    font-size: 1em;
+    padding: 1em 2em;
+    margin-top: 100px;
+    margin-bottom: 60px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ff0081;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+  }
+  
+  .confetti-button:focus { outline: 0; }
+  
+  .confetti-button:before, .confetti-button:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    z-index: -1000;
+    transition: all ease-in-out 0.5s;
+    background-repeat: no-repeat;
+  }
+  
+  .confetti-button:before {
+    display: none;
+    top: -75%;
+    background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 20%, #ff0081 20%, transparent 30%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+  }
+  
+  .confetti-button:after {
+    display: none;
+    bottom: -75%;
+    background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+  }
+  
+  .confetti-button:active {
+    transform: scale(0.9);
+    background-color: #e60074;
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+  }
+  
+  .confetti-button.animate:before {
+    display: block;
+    animation: topBubbles ease-in-out 0.75s forwards;
+  }
+  
+  .confetti-button.animate:after {
+    display: block;
+    animation: bottomBubbles ease-in-out 0.75s forwards;
+  }
+   @keyframes
+  topBubbles {  0% {
+   background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+   50% {
+   background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+   100% {
+   background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+   background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+  }
+  @keyframes
+  bottomBubbles {  0% {
+   background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+   50% {
+   background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+   100% {
+   background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+   background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+  }
+  </style>
+  
+
+<body>
+  <div class="container text-center mt-80">
+    <div class="heart"></div>
+  </div>
+
+  <div class="container text-center mt-120">
+    <p class="fadeIn">Edidiong Ekpo, I have always wanted you in my life. Here are what I like about you, your beautiful eyes,
+      your sexy body, your commitment to God, your focus on your ambitions, your big head that is strong headed, your 
+    </p>
+    <p class="mt-5"></p>
+    <p class="mt-5">Please will you be my Valentine?</p>
+    <div>
+      <button class="no-button mr-4">No</button>
+      <button class="animated shake infinite confetti-button" id="yes">YES</button>
+    </div>
+    
+  </div>
+  <!--<div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h1 class="display-4 text-center mb-3">
+          Weight Converter
+        </h1>
+        <form>
+          <div class="form-group">
+            <input type="number" class="form-control form-control-lg" id="lbsInput" placeholder="Enter pounds.."
+              required>
+          </div>
+        </form>
+        <div id="output">
+          <div class="card bg-primary mb-2">
+            <div class="card-block">
+              <h4>Grams:</h4>
+              <div id="gOutput"></div>
+            </div>
+          </div>
+
+          <div class="card bg-success mb-2">
+            <div class="card-block">
+              <h4>Kilograms:</h4>
+              <div id="kgOutput"></div>
+            </div>
+          </div>
+
+          <div class="card bg-danger mb-2">
+            <div class="card-block">
+              <h4>Ounces:</h4>
+              <div id="ozOutput"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>-->
+
+  <script src="js/app.js"></script>
+  <script src="js/confetti.js"></script>
+  <script>
+    var animateButton = function(e) {
+    
+      e.preventDefault;
+      //reset animation
+      e.target.classList.remove('animate');
+    
+      e.target.classList.add('animate');
+      setTimeout(function(){
+        e.target.classList.remove('animate');
+      },700);
+    };
+    
+    var classname = document.getElementsByClassName("confetti-button");
+    
+    for (var i = 0; i < classname.length; i++) {
+      classname[i].addEventListener('click', animateButton, false);
+    }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/jquery.confetti.js"></script>
+  
+</body>
+
+</html>

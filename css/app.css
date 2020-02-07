@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+@import url('CountrysideTwo-r9WO.ttf');
+
+@font-face {
+  font-family: "Countryside";
+  src: url("Countryside-YdKj.ttf");
+  src: url("CustomFont.woff") format("woff"),
+  url("Countryside-YdKj.ttf") format("truetype")
+  }
+
+body {
+  font-family: 'CountrysideTwo','Roboto Mono', monospace;
+  margin-top : 70px;
+}
+
+.mt-120 {
+  margin-top: 120px;
+}
+
+.mt-80 {
+  margin-top: 80px;
+}
+
+.card {
+  padding: 10px;
+}
+
+.no-button {
+  font-family: 'Helvatica', 'Arial', sans-serif;
+  display: inline-block;
+  font-size: 1em;
+  padding: 1em 2em;
+  margin-top: 100px;
+  margin-bottom: 60px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: rgb(146, 143, 144);
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 25px rgba(146, 143, 144, 0.5);
+}
+
+.no-button:focus { outline: 0; }
+
+.no-button:before, .no-button:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+
+.no-button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, rgb(146, 143, 144) 20%, transparent 20%), radial-gradient(circle, transparent 20%, #ff0081 20%, transparent 30%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+
+.no-button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, rgb(146, 143, 144) 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+
+.no-button:active {
+  transform: scale(0.9);
+  background-color: rgb(117, 102, 107);
+  box-shadow: 0 2px 25px rgba(117, 102, 107, 0.2);
+}
